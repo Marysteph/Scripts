@@ -11,6 +11,6 @@ iput -rPT Documents/hello_world/test-data /iplant/home/dave_k/ # upload director
 
 icp /iplant/home/mukani/analyses/tutorial_data.csv /iplant/home/dave_k/ # iplant version of coy from one folder to another in cyverse
 
-iget -Pf /iplant/home/dave_k/Ordered_snp_allele.csv # download file from path in cyverse to path in curent shell
+iget -Pf /iplant/home/dave_k/Ordered_snp_allele.csv . # download file from path in cyverse to path in curent shell
 
 ils -l | awk '{ print $7 " " $4 }' # print the name nd size of file

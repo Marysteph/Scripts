@@ -93,12 +93,21 @@ docker run -ti --entrypoint "/bin/bash" vimimagecho # to run the image interacti
 
  echo $null >Dockerfile # empty the file
  
-docker ps -aq -f status=exited # list all exited containers
-
-docker ps -aq --no-trunc -f status=exited | xargs docker rm # Remove stopped containers
-
-docker ps --since 6bb20a720eb4 -q | xargs docker rm #Remove containers created after a specific container
 
  Rscript 100_tree.R # in the container
  
- docker rmi --force <IMAGEID> # to forcefully remove an image as well as the attached containers 
+ docker rmi --force <IMAGEID> # to forcefully remove an image as well as the attached containers
+
+docker rm $(docker ps -a -q) # Remove all stopped containers, running containers will throw an error (unless forced with --force tag) 
+
+## to push an image into an existing 
+
+docker login # username and password
+
+docker build -t davekk/new_repo:0.0 . # name of repository with tags
+
+docker push davekk/new_repo:0.0  # push it to repo
+
+docker save -i <name_of_image>
+
+docker load 

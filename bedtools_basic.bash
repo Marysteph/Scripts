@@ -34,5 +34,10 @@ module load bedtools/2.25.0
 awk -v OFS='\t' -v FS='\t' '$3 == "gene" {print $1, $4-1, $5, $1 ":" $4 "-" $5 ":" $9}' ../../gmap/trinity_group2.sorted.gff | bedtools getfasta -name -fi ../../gmap/transformed_coordinates.fasta -bed - -fo ../CDS2.fa
 sed -e 's/\(^>.*$\)/#\1;/' CDS1.fa | tr -d "\r" | tr -d "\n" | sed -e 's/$/#/' | tr "#" "\n" > CDS_we_like.fa
 for file in $(grep ">" ../gmap/transformed_coordinates.fasta); do echo "processing ${file}"; grep ${file:1:4} CDS_we_like.fa >> ${file:1:5}'.fa';done
+##
+sed -e 's/\(^>.*$\)/#\1;/' multiseq.fa | tr -d "\r\n" | sed -e 's/$/#/' | tr " " "+" | tr "#" "\n" > new_multiseqfile.fa
+
+for f in $(grep ">" new_multiseqfile.fa | cut -d ";" -f 1-2); do echo "processing ${f}";grep ">" new_m
+ultiseqfile.fa > ${f:1}'.fa';done
 ## 
 TransDecoder.LongOrfs -t CDS1.fa

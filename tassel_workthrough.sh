@@ -112,7 +112,7 @@ ${TASSEL3} -Xms30G -Xmx30G -fork1 -UTBTToMapInfoPlugin -w ${WORKDIR} -endPlugin 
 #this command generated the map information data.
      
 ##########Generate HapMap file ###############
-${TASSEL3} -Xms30G -Xmx30G -fork1 -UMapInfoToHapMapPlugin -w ${WORKDIR}{WORKDIR} -mnMAF 0.05 -mxMAF 0.5     -mnC 0  -mxC 1 -endPlugin -runfork1
+${TASSEL3} -Xms30G -Xmx30G -fork1 -UMapInfoToHapMapPlugin -w ${WORKDIR}{WtaORKDIR} -mnMAF 0.05 -mxMAF 0.5     -mnC 0  -mxC 1 -endPlugin -runfork1
 
 #this command generates the hap files, depth count files, and fasta file of the SNPs.
 
