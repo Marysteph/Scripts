@@ -32,3 +32,4 @@ abyss-pe j=4 np=4 name='${OUTPUT_DIR}dataset_1_abyss_k_$size' k=${size} in='$REA
 
 sbatch $OUTPUT_DIR/slurm_scripts/$size'_abyss_slurm.sh'
 done
+abyss-pe name='cowpea_abyss_61' k=61 in='/home/smaranga/cowpea_data/SRR37167*_1.fastq.gz \/home/smaranga/cowpea_data/SRR37167*_1.fastq.gz' ulimit -v 512000000
