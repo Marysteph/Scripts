@@ -31,7 +31,7 @@ qiime deblur denoise-16S --i-demultiplexed-seqs jioned_paired_filtered.qza --p-t
 ## view your .qzv files 
 qiime tools view demux.qzv
 
-# Download classifier that has been pretrained on GreenGenes database with 99% OTUs 
+# Download classifier that has been pretrained on GreenGenes database with 99% OTUs identity 
 wget -O "gg-13-8-99-515-806-nb-classifier.qza" "https://data.qiime2.org/2018.2/common/gg-13-8-99-515-806-nb-classifier.qza"
 
 #getting feature biom file
