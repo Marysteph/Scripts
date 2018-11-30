@@ -6,6 +6,8 @@ for f in $(ls *.csv); do echo $f ;sed 's/,/\t/g' $f > ${f%%.csv}'.tsv' ;done #ch
 qiime tools import --type 'SampleData[SequencesWithQuality]' --input-path $PWD/manifest --output-path $PWD/se.qza --source-format SingleEndFastqManifestPhred33
 qiime metadata tabulate --m-input-file metadata.tsv --o-visualization metadata.qzv
 
+# uncomment where relevant
+
 #!/bin/bash
 
 #specify paths to your working directory and your reads directory
